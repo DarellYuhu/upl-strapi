@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "mesh": {
+      "type": "string"
+    },
+    "color": {
+      "type": "string"
+    },
+    "application_short": {
+      "type": "string"
+    },
+    "diameter": {
+      "type": "string"
+    },
+    "weight": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "main_adventage": {
+      "type": "richtext"
+    },
+    "benefit": {
+      "type": "richtext"
+    },
+    "application_detail": {
+      "type": "richtext"
+    },
+    "images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

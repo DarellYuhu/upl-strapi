@@ -1,0 +1,42 @@
+{
+  "kind": "singleType",
+  "collectionName": "company_details",
+  "info": {
+    "singularName": "company-detail",
+    "pluralName": "company-details",
+    "displayName": "Company Detail",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "company_name": {
+      "type": "string"
+    },
+    "short_name": {
+      "type": "string"
+    },
+    "abbreviate_name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "address": {
+      "type": "text"
+    },
+    "email": {
+      "type": "email"
+    },
+    "vision": {
+      "type": "text"
+    },
+    "mission": {
+      "type": "richtext"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}
