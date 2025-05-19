@@ -518,6 +518,36 @@ export interface ApiProductionProcessProductionProcess
   };
 }
 
+export interface ApiTimelineTimeline extends Struct.CollectionTypeSchema {
+  collectionName: 'timelines';
+  info: {
+    description: '';
+    displayName: 'Timeline';
+    pluralName: 'timelines';
+    singularName: 'timeline';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::timeline.timeline'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1030,6 +1060,7 @@ declare module '@strapi/strapi' {
       'api::home.home': ApiHomeHome;
       'api::product.product': ApiProductProduct;
       'api::production-process.production-process': ApiProductionProcessProductionProcess;
+      'api::timeline.timeline': ApiTimelineTimeline;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
